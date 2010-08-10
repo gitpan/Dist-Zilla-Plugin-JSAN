@@ -1,0 +1,122 @@
+Name
+====
+
+{{ $plugin->dist_name }} - Some clever yet compact description
+
+
+SYNOPSIS
+========
+
+        // declaring our class
+        Class('{{ $plugin->dist_name }}', {
+        
+        })
+        
+        // then instantiating it
+        var instance = new {{ $plugin->dist_name }}({
+        })
+        
+        // and doing something totally awesome with it :D
+        instance.method(param1, param2)
+        
+
+
+DESCRIPTION
+===========
+
+`{{ $plugin->dist_name }}` is a stub for Joose-orientied JSAN modules.
+
+
+ISA
+===
+
+None.
+
+
+DOES
+====
+
+None.
+
+
+TRAITS
+======
+
+None.
+
+
+
+ATTRIBUTES
+==========
+
+### attributeName
+
+> `AttributeType attributeName`
+
+> Attribute description
+
+
+METHODS
+=======
+
+### methodName
+
+> `method signature`
+
+> Method description
+
+
+EXAMPLES
+========
+
+Our class can be used like this:
+
+        // then instantiating it
+        var instance = new {{ $plugin->dist_name }}({
+        })
+
+and like that:
+
+        // then instantiating it
+        var instance = new {{ $plugin->dist_name }}({
+        })
+
+
+GETTING HELP
+============
+
+This extension is supported via github issues tracker: <http://github.com/SamuraiJack/Module-Stub/issues>
+
+For general Joose questions you can also visit [#joose](http://webchat.freenode.net/?randomnick=1&channels=joose&prompt=1) 
+on irc.freenode.org or the forum at: <http://joose.it/forum>
+ 
+
+
+SEE ALSO
+========
+
+Web page of this module: <http://github.com/SamuraiJack/Module-Stub/>
+
+General documentation for Joose: <http://openjsan.org/go/?l=Joose>
+
+
+BUGS
+====
+
+All complex software has bugs lurking in it, and this module is no exception.
+
+Please report any bugs through the web interface at <http://github.com/SamuraiJack/Module-Stub/issues>
+
+
+
+AUTHORS
+=======
+
+{{ $OUT .= $_ . "\n\n" foreach (@{$dist->authors})  }}
+
+
+
+COPYRIGHT AND LICENSE
+=====================
+
+{{ $dist->license->notice }}

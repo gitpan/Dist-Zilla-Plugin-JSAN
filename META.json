@@ -1,0 +1,54 @@
+{
+   "abstract" : "Build JavaScript distributions for JSAN, which can be installed locally",
+   "author" : [
+      "Nickolay Platonov <nplatonov@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Zilla-Plugin-JSAN",
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "Module::Build" : "0.3601"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Data::Section" : "0.004",
+            "Dist::Zilla" : "4.101900",
+            "Dist::Zilla::Plugin::BumpVersionFromGit" : "0.007",
+            "Dist::Zilla::Plugin::CheckChangesHasContent" : "0.003",
+            "Dist::Zilla::Plugin::Git" : "1.102090",
+            "Dist::Zilla::Plugin::Twitter" : "0.009",
+            "JSON" : "2.00",
+            "Module::Build::JSAN::Installable" : "0.12",
+            "Path::Class" : "0.16",
+            "Text::Markdown" : "v1.0.26",
+            "Text::MultiMarkdown" : "v1.0.29"
+         }
+      }
+   },
+   "release_status" : "testing",
+   "resources" : {
+      "homepage" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN.git",
+         "web" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree"
+      }
+   },
+   "version" : "0.01"
+}
+
