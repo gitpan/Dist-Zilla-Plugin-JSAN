@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Upload;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Upload::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::Upload::VERSION = '0.01_02';
 }
 
 # ABSTRACT: upload the dist to JSAN
@@ -160,3 +160,28 @@ no Moose;
 
 
 1;
+
+__END__
+=pod
+
+=head1 NAME
+
+Dist::Zilla::Plugin::JSAN::Upload - upload the dist to JSAN
+
+=head1 VERSION
+
+version 0.01_02
+
+=head1 AUTHOR
+
+Nickolay Platonov <nplatonov@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Nickolay Platonov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+

@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Minter;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Minter::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::Minter::VERSION = '0.01_02';
 }
 
 # ABSTRACT: Default "minter"
@@ -79,13 +79,63 @@ __PACKAGE__->meta->make_immutable();
 
 
 
+
+__END__
+=pod
+
+=head1 NAME
+
+Dist::Zilla::Plugin::JSAN::Minter - Default "minter"
+
+=head1 VERSION
+
+version 0.01_02
+
 =head1 SYNOPSIS
 
 In your F<profile.ini>:
 
-  [JSAN::Minter]
+    [JSAN::Minter]
+
+To start a new JSAN distribution:
+
+    > dzil new -P JSAN -p joose Distribution-Name
+
+or using your own profile:
+
+    > dzil new -p my_profile Distribution-Name     
 
 =head1 DESCRIPTION
 
+Before you'll start creating distributions, setup the Dist::Zilla:
+
+    > dzil setup
+
+It will ask you some basic info. When asking about the default license, here's the list 
+of available identificators (at the bottom and w/o leading "Software::License::"): L<Software::License>
+
+=head1 MODIFYING PROFILE
+
+Dist::Zilla stores profiles in the "~/.dzil/profiles/" directory. "~" denotes your home dir. [TODO: find where is it
+on windows] Each profile is a directory which should at least contain a "profile.ini" file, specifying the
+plugins used during new distribution creation.
+
+Probably the easiest way to start a new profile will be to copy the default profile ("joose") and hack on it:
+[TODO: link to "joose" profile"]
+
+JSAN::Minter will look for "lib/Module/Stub.*" files in the profile directory and process them as templates.
+The result of processing will be stored as "lib/Distribution/Name.*" (with the same extension).
+
+=head1 AUTHOR
+
+Nickolay Platonov <nplatonov@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Nickolay Platonov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
+

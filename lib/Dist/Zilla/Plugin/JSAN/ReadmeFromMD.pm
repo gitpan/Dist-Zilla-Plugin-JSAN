@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::ReadmeFromMD;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.01_02';
 }
 
 # ABSTRACT: build a README file
@@ -98,14 +98,25 @@ no Moose;
 
 1;
 
+
+__END__
+=pod
+
+=head1 NAME
+
+Dist::Zilla::Plugin::JSAN::ReadmeFromMD - build a README file
+
+=head1 VERSION
+
+version 0.01_02
+
 =head1 SYNOPSIS
 
 In your F<dist.ini>:
 
   [JSAN::ReadmeFromMD]
   update_sources       = 1; this is a default
-  
-  
+
 =head1 DESCRIPTION
 
 This plugin adds a F<README.md> file to the distribution, which just copy the 
@@ -120,4 +131,16 @@ generated. Therefor it should be included *after* the [JSAN] plugin.
 
 If this plugin can't find the documentation file it falls back to standard [README] plugin behavior
 
+=head1 AUTHOR
+
+Nickolay Platonov <nplatonov@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Nickolay Platonov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
+

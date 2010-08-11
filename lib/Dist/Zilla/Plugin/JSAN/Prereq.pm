@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Prereq;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Prereq::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::Prereq::VERSION = '0.01_02';
 }
 
 # ABSTRACT: list simple prerequisites in JavaScript naming convention
@@ -41,6 +41,18 @@ __PACKAGE__->meta->make_immutable(inline_constructor => 0);
 
 
 
+
+__END__
+=pod
+
+=head1 NAME
+
+Dist::Zilla::Plugin::JSAN::Prereq - list simple prerequisites in JavaScript naming convention
+
+=head1 VERSION
+
+version 0.01_02
+
 =head1 SYNOPSIS
 
 In your F<dist.ini>:
@@ -59,4 +71,16 @@ other conditions.
 The only difference from standard [Prereq] plugin is that this plugin
 allows you to use the dot in the prereq name as the namespace delimeter.
 
+=head1 AUTHOR
+
+Nickolay Platonov <nplatonov@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Nickolay Platonov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
 =cut
+

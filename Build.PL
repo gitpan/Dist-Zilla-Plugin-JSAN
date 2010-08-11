@@ -12,12 +12,12 @@ my %module_build_args = (
   'configure_requires' => {
     'Module::Build' => '0.3601'
   },
-  'dist_abstract' => 'Build JavaScript distributions for JSAN, which can be installed locally',
+  'dist_abstract' => 'a plugin for Dist::Zilla for building JSAN distributions',
   'dist_author' => [
     'Nickolay Platonov <nplatonov@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-JSAN',
-  'dist_version' => '0.01',
+  'dist_version' => '0.01_02',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::JSAN',
   'recommends' => {},

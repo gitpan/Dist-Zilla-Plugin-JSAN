@@ -1,5 +1,5 @@
 {
-   "abstract" : "Build JavaScript distributions for JSAN, which can be installed locally",
+   "abstract" : "a plugin for Dist::Zilla for building JSAN distributions",
    "author" : [
       "Nickolay Platonov <nplatonov@cpan.org>"
    ],
@@ -49,6 +49,6 @@
          "web" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree"
       }
    },
-   "version" : "0.01"
+   "version" : "0.01_02"
 }
 
