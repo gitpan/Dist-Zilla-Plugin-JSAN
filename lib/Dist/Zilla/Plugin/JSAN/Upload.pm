@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Upload;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Upload::VERSION = '0.01_02';
+  $Dist::Zilla::Plugin::JSAN::Upload::VERSION = '0.01_03';
 }
 
 # ABSTRACT: upload the dist to JSAN
@@ -170,7 +170,7 @@ Dist::Zilla::Plugin::JSAN::Upload - upload the dist to JSAN
 
 =head1 VERSION
 
-version 0.01_02
+version 0.01_03
 
 =head1 AUTHOR
 

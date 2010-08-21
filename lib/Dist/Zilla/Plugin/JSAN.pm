@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::VERSION = '0.01_02';
+  $Dist::Zilla::Plugin::JSAN::VERSION = '0.01_03';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla for building JSAN distributions
@@ -330,7 +330,7 @@ Dist::Zilla::Plugin::JSAN - a plugin for Dist::Zilla for building JSAN distribut
 
 =head1 VERSION
 
-version 0.01_02
+version 0.01_03
 
 =head1 SYNOPSIS
 
@@ -367,6 +367,8 @@ In F<dist.ini>:
     [JSAN]                            ; includes META.JSON generation
     docs_markup         = mmd         ; default
     static_dir          = static      ; default
+    
+    [JSAN::StaticDir]
     
     [JSAN::ReadmeFromMD]              ; should be after docs generation
     [JSAN::InstallInstructions]       ; add INSTALL file, describing the installation process
@@ -417,7 +419,7 @@ In F<dist.ini>:
 This is a plugin for distribution-management tool L<Dist::Zilla>. It greatly simplifies the release process,
 allowing you to focus on the code itself.
 
-As the installer, this plugin use L<Module::Build::JSAN::Installable>, please RTFM.
+As the installer, this plugin use L<Module::Build::JSAN::Installable>.
 
 =head1 PLUGINS
 
@@ -432,9 +434,11 @@ L<Dist::Zilla::Plugin::JSAN::Bundle> - concatenate individual source files into 
 
 L<Dist::Zilla::Plugin::JSAN::Prereq> - allows you to specify the dependencies for the distribution, using dot as namespace separator 
 
+L<Dist::Zilla::Plugin::JSAN::StaticDir> - moves the content of the static directory to the distribution folder
+
 =head1 STARTING A NEW DISTRIBUTION
 
-This plugin allows you to easily start a new JSAN distribution. Read to L<Dist::Zilla::Plugin::JSAN::Minter> know how.
+This plugin allows you to easily start a new JSAN distribution. Read L<Dist::Zilla::Plugin::JSAN::Minter> to know how.
 
 =head1 AUTHOR
 
@@ -446,7 +450,7 @@ Please report any bugs or feature requests to L<http://rt.cpan.org/NoAuth/Report
 L<http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/issues>.  
 I will be notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
-=head1 SUPPORT
+=head1 SOURCES
 
 This module is stored in an open repository at the following address:
 
