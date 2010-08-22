@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Minter;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Minter::VERSION = '0.01_03';
+  $Dist::Zilla::Plugin::JSAN::Minter::VERSION = '0.01_04';
 }
 
 # ABSTRACT: Default "minter"
@@ -89,7 +89,7 @@ Dist::Zilla::Plugin::JSAN::Minter - Default "minter"
 
 =head1 VERSION
 
-version 0.01_03
+version 0.01_04
 
 =head1 SYNOPSIS
 
