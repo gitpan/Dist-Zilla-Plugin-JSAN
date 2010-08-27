@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Bundle;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.01_04';
+  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.01_05';
 }
 
 # ABSTRACT: Bundle the library files into "tasks", using information from Components.JS 
@@ -101,7 +101,11 @@ sub expand_task_entry {
 sub get_component_content {
     my ($self, $component) = @_;
     
-    if ($component =~ /^jsan:(.+)/) {
+    if ((ref $component eq 'HASH') && $component->{ text }) {
+        
+        return $component->{ text };
+    
+    } elsif ($component =~ /^jsan:(.+)/) {
         my @file = (Module::Build::JSAN::Installable->get_jsan_libroot, 'lib', split /\./, $1);
         $file[ -1 ] .= '.js';
         
@@ -146,7 +150,7 @@ Dist::Zilla::Plugin::JSAN::Bundle - Bundle the library files into "tasks", using
 
 =head1 VERSION
 
-version 0.01_04
+version 0.01_05
 
 =head1 SYNOPSIS
 

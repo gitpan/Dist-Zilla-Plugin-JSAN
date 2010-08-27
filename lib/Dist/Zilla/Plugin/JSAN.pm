@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::VERSION = '0.01_04';
+  $Dist::Zilla::Plugin::JSAN::VERSION = '0.01_05';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla for building JSAN distributions
@@ -330,7 +330,7 @@ Dist::Zilla::Plugin::JSAN - a plugin for Dist::Zilla for building JSAN distribut
 
 =head1 VERSION
 
-version 0.01_04
+version 0.01_05
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,11 @@
 Release history for Dist::Zilla::Plugin::JSAN
 
+0.01_05   2010-08-27 22:06
+
+        - added PkgVersion plugin
+        - added NPM plugin
+        - added NPM::Publish plugin
+
 0.01_04   2010-08-22 17:53
         
         - bundler made FileMunger instead of Gatherer, to allow mungling plugins pre-process files before bundling

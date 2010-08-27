@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Prereq;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Prereq::VERSION = '0.01_04';
+  $Dist::Zilla::Plugin::JSAN::Prereq::VERSION = '0.01_05';
 }
 
 # ABSTRACT: list simple prerequisites in JavaScript naming convention
@@ -51,7 +51,7 @@ Dist::Zilla::Plugin::JSAN::Prereq - list simple prerequisites in JavaScript nami
 
 =head1 VERSION
 
-version 0.01_04
+version 0.01_05
 
 =head1 SYNOPSIS
 
