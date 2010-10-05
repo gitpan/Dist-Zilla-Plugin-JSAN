@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM::Publish;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.01_05';
+  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.01';
 }
 
 # ABSTRACT: Publish your module in npm with `dzil release`  
@@ -12,13 +12,20 @@ with 'Dist::Zilla::Role::Releaser';
 use Path::Class;
 
 
+has 'sudo' => (
+    is          => 'rw',
+    
+    default     => 0
+);
+
 
 #================================================================================================================================================================================================================================================
 sub release {
     my ($self, $archive) = @_;
     
+    my $sudo = $self->sudo ? 'sudo' : '';
     
-    $self->log(`npm publish $arhive`);
+    $self->log(`$sudo npm publish $archive`);
 }
 
 
@@ -41,13 +48,15 @@ Dist::Zilla::Plugin::JSAN::NPM::Publish - Publish your module in npm with `dzil 
 
 =head1 VERSION
 
-version 0.01_05
+version 0.01
 
 =head1 SYNOPSIS
 
 In your F<dist.ini>:
 
     [JSAN::NPM::Publish]
+    
+    sudo = 1             ; add `sudo` to the publish call, defaults to 0
 
 =head1 DESCRIPTION
 

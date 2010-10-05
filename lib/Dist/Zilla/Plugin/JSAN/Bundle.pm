@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Bundle;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.01_05';
+  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.01';
 }
 
 # ABSTRACT: Bundle the library files into "tasks", using information from Components.JS 
@@ -150,7 +150,7 @@ Dist::Zilla::Plugin::JSAN::Bundle - Bundle the library files into "tasks", using
 
 =head1 VERSION
 
-version 0.01_05
+version 0.01
 
 =head1 SYNOPSIS
 

@@ -40,7 +40,7 @@
          }
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "homepage" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree",
       "repository" : {
@@ -49,6 +49,6 @@
          "web" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree"
       }
    },
-   "version" : "0.01_05"
+   "version" : "0.01"
 }
 

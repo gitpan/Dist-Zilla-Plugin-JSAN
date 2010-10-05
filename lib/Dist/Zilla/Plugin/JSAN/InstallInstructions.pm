@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::InstallInstructions;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::InstallInstructions::VERSION = '0.01_05';
+  $Dist::Zilla::Plugin::JSAN::InstallInstructions::VERSION = '0.01';
 }
 
 # ABSTRACT: build an INSTALL file
@@ -69,7 +69,7 @@ Dist::Zilla::Plugin::JSAN::InstallInstructions - build an INSTALL file
 
 =head1 VERSION
 
-version 0.01_05
+version 0.01
 
 =head1 SYNOPSIS
 

@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.01_05';
+  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.01';
 }
 
 # ABSTRACT: Generate the `package.json` file, suitable for `npm` package manager 
@@ -37,6 +37,8 @@ has 'version' => (
         my $version = $_[0]->zilla->version;
         
         $version .= '.0' if $version !~ m!\d+\.\d+\.\d+!;
+        
+        $version =~ s/\.0(\d+)/.$1/g;
         
         return $version
     }
@@ -156,7 +158,8 @@ sub gather_files {
             
             $package->{ contributors }  = $self->contributor;
             $package->{ dependencies }  = $self->convert_dependencies($self->dependency);
-            $package->{ engines }       = $self->convert_engines($self->engine);
+            
+            $package->{ engines }       = $self->convert_engines($self->engine) if @{$self->engine} > 0;
             
             $package->{ directories } = {
                 "doc" => "./doc/mmd",
@@ -178,7 +181,7 @@ sub convert_dependencies {
 	    
 	    my $dep = $_;
 	    
-	    $dep =~ m/"?(\w+)"?\s*:\s*"(.+)"/;
+	    $dep =~ m/"?(.+?)"?\s*:\s*"(.+)"/;
 	    
 	    $1 => $2;
 	    
@@ -229,7 +232,7 @@ Dist::Zilla::Plugin::JSAN::NPM - Generate the `package.json` file, suitable for 
 
 =head1 VERSION
 
-version 0.01_05
+version 0.01
 
 =head1 SYNOPSIS
 

@@ -1,5 +1,11 @@
 Release history for Dist::Zilla::Plugin::JSAN
 
+0.01      2010-10-05 13:01
+
+        - only include the 'engines' field if there are an engines specified
+        - strip leading zeros from the version
+        - added `sudo` config option to NPM::Publish
+
 0.01_05   2010-08-27 22:06
 
         - added PkgVersion plugin

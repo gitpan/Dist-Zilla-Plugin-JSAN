@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::GatherDir::Template;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::GatherDir::Template::VERSION = '0.01_05';
+  $Dist::Zilla::Plugin::JSAN::GatherDir::Template::VERSION = '0.01';
 }
 # ABSTRACT: gather all the files in a directory and use them as templates (copy-pasted from Dist::Zilla::Plugin::GatherDir::Template with bug-fix) 
 
@@ -53,7 +53,7 @@ Dist::Zilla::Plugin::JSAN::GatherDir::Template - gather all the files in a direc
 
 =head1 VERSION
 
-version 0.01_05
+version 0.01
 
 =head1 DESCRIPTION
 
