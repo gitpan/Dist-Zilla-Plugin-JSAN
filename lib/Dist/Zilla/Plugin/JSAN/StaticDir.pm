@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::StaticDir;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.02';
 }
 
 # ABSTRACT: Process "static" directory
@@ -10,6 +10,14 @@ use Moose;
 use Path::Class;
 
 with 'Dist::Zilla::Role::FileMunger';
+
+
+has 'static_dir' => (
+    isa     => 'Str',
+    is      => 'rw',
+    default => 'static'
+);
+
 
 
 sub dist_name_as_dir {
@@ -24,7 +32,7 @@ sub dist_name_as_dir {
 sub munge_file {
     my ($self, $file) = @_;
     
-    my $static_dir = $self->zilla->plugin_named('JSAN')->static_dir;
+    my $static_dir = $self->static_dir;
     
     if ($file->name =~ m|^$static_dir|) {
         
@@ -54,24 +62,19 @@ Dist::Zilla::Plugin::JSAN::StaticDir - Process "static" directory
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
 In your F<dist.ini>:
 
-    [JSAN]
-    static_dir = static ; default
-
     [JSAN::StaticDir]
+    static_dir = static ; default
 
 =head1 DESCRIPTION
 
 This plugin will move the "static" directory of your distribution into the "lib" folder, under its
 distribution name. Please refer to L<Module::Build::JSAN::Installable> for details what is a "static" directory. 
-
-Note, that the "static_dir" parameter by itself should be specified for the [JSAN] plugin, because its also 
-needed for META.JSON generation.
 
 =head1 AUTHOR
 

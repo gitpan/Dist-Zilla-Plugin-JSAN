@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM::Publish;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.02';
 }
 
 # ABSTRACT: Publish your module in npm with `dzil release`  
@@ -16,6 +16,14 @@ has 'sudo' => (
     is          => 'rw',
     
     default     => 0
+);
+
+
+# required by [Twitter] 
+
+has 'user' => (
+    is          => 'rw',
+    default     => 'CPANID'
 );
 
 
@@ -48,7 +56,7 @@ Dist::Zilla::Plugin::JSAN::NPM::Publish - Publish your module in npm with `dzil 
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

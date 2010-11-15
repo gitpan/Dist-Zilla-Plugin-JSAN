@@ -1,5 +1,9 @@
 Release history for Dist::Zilla::Plugin::JSAN
 
+0.02      2010-11-15 14:19
+
+        - switched to NPM only distribution
+
 0.01      2010-10-05 13:01
 
         - only include the 'engines' field if there are an engines specified

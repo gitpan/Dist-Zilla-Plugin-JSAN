@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::Bundle;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::Bundle::VERSION = '0.02';
 }
 
 # ABSTRACT: Bundle the library files into "tasks", using information from Components.JS 
@@ -13,8 +13,15 @@ with 'Dist::Zilla::Role::FileMunger';
 use Dist::Zilla::File::FromCode;
 
 use JSON 2;
-use Module::Build::JSAN::Installable;
 use Path::Class;
+use Capture::Tiny qw/capture/;
+
+
+has 'npm_root' => (
+    isa     => 'Str',
+    is      => 'rw',
+);
+
 
 
 #================================================================================================================================================================================================================================================
@@ -106,7 +113,8 @@ sub get_component_content {
         return $component->{ text };
     
     } elsif ($component =~ /^jsan:(.+)/) {
-        my @file = (Module::Build::JSAN::Installable->get_jsan_libroot, 'lib', split /\./, $1);
+        
+        my @file = ($self->get_npm_root, '.jsan', split /\./, $1);
         $file[ -1 ] .= '.js';
         
         return file(@file)->slurp;
@@ -119,6 +127,66 @@ sub get_component_content {
         
         return $found->content;
     } 
+}
+
+
+#================================================================================================================================================================================================================================================
+sub get_npm_root {
+    my ($self) = @_;
+    
+    return $self->npm_root if $self->npm_root;
+    
+    $self->log('Trying to determine the `root` config setting of `npm`');
+    
+    # JSANLIB is deprecated
+    my $root = $ENV{npm_config_root} || $ENV{JSANLIB};
+    
+    if ($root) {
+        
+        $self->npm_root($root);
+        
+        $self->log("Found: [$root]");
+        
+        return $self->npm_root;
+    };
+    
+    my $exit_code;
+    
+    my ($stdout, $stderr) = capture {
+        system('npm config get root');
+        
+        $exit_code = $? >> 8;
+    };
+    
+    chomp($stdout);
+    
+    if (!$exit_code) {
+        $self->log("Found: [$stdout]");
+        
+        $self->npm_root($stdout);
+        
+        return $self->npm_root;
+    };
+    
+    $self->log('`npm config get root` failed, trying with [sudo]');
+    
+    ($stdout, $stderr) = capture {
+        system('sudo npm config get root');
+        
+        $exit_code = $? >> 8;
+    };
+    
+    chomp($stdout);
+    
+    if (!$exit_code) {
+        $self->log("Found: [$stdout]");
+        
+        $self->npm_root($stdout);
+        
+        return $self->npm_root;
+    };
+    
+    die "Can't determine the `npm` root"; 
 }
 
 
@@ -150,7 +218,7 @@ Dist::Zilla::Plugin::JSAN::Bundle - Bundle the library files into "tasks", using
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

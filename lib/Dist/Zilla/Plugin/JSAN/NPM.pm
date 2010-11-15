@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.02';
 }
 
 # ABSTRACT: Generate the `package.json` file, suitable for `npm` package manager 
@@ -38,7 +38,7 @@ has 'version' => (
         
         $version .= '.0' if $version !~ m!\d+\.\d+\.\d+!;
         
-        $version =~ s/\.0(\d+)/.$1/g;
+        $version =~ s/\.0+(\d+)/.$1/g;
         
         return $version
     }
@@ -154,20 +154,40 @@ sub gather_files {
             
             my $package = {};
             
-            $package->{ $_ } = $self->$_ for qw( name version description homepage repository author main);
+            $package->{ $_ } = $self->$_ for qw( name version description homepage repository author main );
             
             $package->{ contributors }  = $self->contributor;
-            $package->{ dependencies }  = $self->convert_dependencies($self->dependency);
+            $package->{ dependencies }  = $self->convert_dependencies($self->dependency) if @{$self->dependency} > 0;
             
             $package->{ engines }       = $self->convert_engines($self->engine) if @{$self->engine} > 0;
             
-            $package->{ directories } = {
+            $package->{ directories }   = {
                 "doc" => "./doc/mmd",
                 "man" => "./man",
                 "lib" => "./lib"
             };            
             
+            $package->{ scripts }   = {
+                "postactivate" => '$SHELL __script/postactivate.sh'
+            };
+                        
             return JSON->new->utf8(1)->pretty(1)->encode($package)
+        }
+    }));
+    
+    
+    $self->add_file(Dist::Zilla::File::FromCode->new({
+        
+        name => file('__script/postactivate.sh') . '',
+        
+        code => sub {
+            
+            return <<POSTACTIVATE
+
+mkdir -p \$npm_config_root/.jsan
+cp -r ./lib/* \$npm_config_root/.jsan      
+
+POSTACTIVATE
         }
     }));
 }
@@ -181,7 +201,7 @@ sub convert_dependencies {
 	    
 	    my $dep = $_;
 	    
-	    $dep =~ m/"?(.+?)"?\s*:\s*"(.+)"/;
+	    $dep =~ m/([\w\-\.]+)\s*(.+)/;
 	    
 	    $1 => $2;
 	    
@@ -232,7 +252,7 @@ Dist::Zilla::Plugin::JSAN::NPM - Generate the `package.json` file, suitable for 
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -247,7 +267,7 @@ In your F<dist.ini>:
     author          = Clever Guy <cg@cleverguy.org> ; the 1st specified author
     
     contributor     = Clever Guy2 <cg2@cleverguy.org> ; note the singular spelling
-    contributor     = Clever Guy3 <cg2@cleverguy.org> ; other authors from main config
+    contributor     = Clever Guy3 <cg3@cleverguy.org> ; other authors from main config
     
     description     = Some clever, yet compact description ; asbtract from main config
 
@@ -256,11 +276,11 @@ In your F<dist.ini>:
     
     main            = 'lib/some/distro'         ; default to main module in distribution
     
-    dependency      = "foo" : "1.0.0 - 2.9999.9999"     ; note the singular spelling
-    dependency      = "bar" : ">=1.0.2 <2.1.2"          ; 
+    dependency      = foo 1.0.0 - 2.9999.9999           ; note the singular spelling
+    dependency      = bar >=1.0.2 <2.1.2                ; 
     
-    engine          = "node >=0.1.27 <0.1.30"           ; note the singular spelling
-    engine          = "dode >=0.1.27 <0.1.30"           ; 
+    engine          = node >=0.1.27 <0.1.30             ; note the singular spelling
+    engine          = dode >=0.1.27 <0.1.30             ; 
 
 =head1 DESCRIPTION
 

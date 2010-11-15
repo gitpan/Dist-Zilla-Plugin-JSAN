@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::PkgVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.02';
 }
 
 # ABSTRACT: Embedd module version to sources
@@ -52,7 +52,7 @@ sub munge_files {
             
             $version = "'$version'" if $version !~ m/^\d+(\.\d+)?$/;
             
-            $content_copy =~ s!$overall_quoted!${whitespace}/*VERSION*/VERSION : ${version}${comma}!;
+            $content_copy =~ s!$overall_quoted!${whitespace}/*PKGVERSION*/VERSION : ${version}${comma}!;
         }
         
         $file->content($content_copy) if $content_copy ne $content;
@@ -78,7 +78,7 @@ Dist::Zilla::Plugin::JSAN::PkgVersion - Embedd module version to sources
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

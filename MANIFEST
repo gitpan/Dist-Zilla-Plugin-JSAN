@@ -9,15 +9,14 @@ lib/Dist/Zilla/MintingProfile/JSAN.pm
 lib/Dist/Zilla/Plugin/JSAN.pm
 lib/Dist/Zilla/Plugin/JSAN/Bundle.pm
 lib/Dist/Zilla/Plugin/JSAN/GatherDir/Template.pm
+lib/Dist/Zilla/Plugin/JSAN/GitHubDocs.pm
 lib/Dist/Zilla/Plugin/JSAN/InstallInstructions.pm
 lib/Dist/Zilla/Plugin/JSAN/Minter.pm
 lib/Dist/Zilla/Plugin/JSAN/NPM.pm
 lib/Dist/Zilla/Plugin/JSAN/NPM/Publish.pm
 lib/Dist/Zilla/Plugin/JSAN/PkgVersion.pm
-lib/Dist/Zilla/Plugin/JSAN/Prereq.pm
 lib/Dist/Zilla/Plugin/JSAN/ReadmeFromMD.pm
 lib/Dist/Zilla/Plugin/JSAN/StaticDir.pm
-lib/Dist/Zilla/Plugin/JSAN/Upload.pm
 share/profiles/joose/.gitignore
 share/profiles/joose/Changes
 share/profiles/joose/Components.JS
@@ -31,7 +30,6 @@ share/profiles/joose/t/index.js
 t/000_load.t
 t/010_bundle.t
 t/020_readme_docs.t
-t/030_meta_json.t
 t/040_static_dir.t
 t/050_pkg_version.t
 t/060_npm.t
@@ -40,10 +38,6 @@ t/lib/Test/DZil.pm
 test_data/Bundle/Components.JS
 test_data/Bundle/assets/dep/dep.js
 test_data/Bundle/dist.ini
-test_data/Bundle/jsan/lib/File1.js
-test_data/Bundle/jsan/lib/File2.js
-test_data/Bundle/jsan/lib/File3.js
-test_data/Bundle/jsan/lib/File4.js
 test_data/Bundle/lib/Digest/MD5.js
 test_data/Bundle/lib/Digest/MD6.js
 test_data/Bundle/lib/File1.js
@@ -54,6 +48,10 @@ test_data/Bundle/lib/Part2/File1.js
 test_data/Bundle/lib/Part2/File2.js
 test_data/Bundle/lib/Part2/File3.js
 test_data/Bundle/lib/Part2/File4.js
+test_data/Bundle/npm/.jsan/File1.js
+test_data/Bundle/npm/.jsan/File2.js
+test_data/Bundle/npm/.jsan/File3.js
+test_data/Bundle/npm/.jsan/File4.js
 test_data/Readme/dist.ini
 test_data/Readme/lib/Sample/Dist.js
 test_data/Readme/lib/Sample/Dist.mmd

@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::ReadmeFromMD;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.01';
+  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.02';
 }
 
 # ABSTRACT: build a README file
@@ -108,7 +108,7 @@ Dist::Zilla::Plugin::JSAN::ReadmeFromMD - build a README file
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
