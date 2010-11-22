@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::StaticDir;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.02';
+  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.03';
 }
 
 # ABSTRACT: Process "static" directory
@@ -62,7 +62,7 @@ Dist::Zilla::Plugin::JSAN::StaticDir - Process "static" directory
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 

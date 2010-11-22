@@ -17,7 +17,7 @@ my %module_build_args = (
     'Nickolay Platonov <nplatonov@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-JSAN',
-  'dist_version' => '0.02',
+  'dist_version' => '0.03',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::JSAN',
   'recommends' => {},

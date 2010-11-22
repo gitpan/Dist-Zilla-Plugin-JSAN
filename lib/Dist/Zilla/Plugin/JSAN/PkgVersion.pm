@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::PkgVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.02';
+  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.03';
 }
 
 # ABSTRACT: Embedd module version to sources
@@ -78,7 +78,7 @@ Dist::Zilla::Plugin::JSAN::PkgVersion - Embedd module version to sources
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -114,7 +114,7 @@ This plugin will replace the
 
     /*VERSION,*/ 
 
-placeholders with the distribution version. Replacement will be  
+placeholders with the distribution version.  
 
 =head1 AUTHOR
 
