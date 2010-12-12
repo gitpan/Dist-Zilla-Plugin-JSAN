@@ -17,7 +17,7 @@ my %module_build_args = (
     'Nickolay Platonov <nplatonov@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-JSAN',
-  'dist_version' => '0.03',
+  'dist_version' => '0.04',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::JSAN',
   'recommends' => {},
@@ -29,6 +29,7 @@ my %module_build_args = (
     'Dist::Zilla' => '4.102343',
     'Dist::Zilla::Plugin::CheckChangesHasContent' => '0.003',
     'Dist::Zilla::Plugin::Git' => '1.102810',
+    'Dist::Zilla::Plugin::GithubMeta' => '0.10',
     'Dist::Zilla::Plugin::Twitter' => '0.009',
     'File::Temp' => '0.22',
     'JSON' => '2.00',

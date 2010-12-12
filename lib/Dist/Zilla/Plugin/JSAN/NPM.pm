@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.03';
+  $Dist::Zilla::Plugin::JSAN::NPM::VERSION = '0.04';
 }
 
 # ABSTRACT: Generate the `package.json` file, suitable for `npm` package manager 
@@ -261,7 +261,7 @@ Dist::Zilla::Plugin::JSAN::NPM - Generate the `package.json` file, suitable for 
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 

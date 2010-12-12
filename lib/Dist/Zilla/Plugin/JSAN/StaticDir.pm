@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::StaticDir;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.03';
+  $Dist::Zilla::Plugin::JSAN::StaticDir::VERSION = '0.04';
 }
 
 # ABSTRACT: Process "static" directory
@@ -62,19 +62,29 @@ Dist::Zilla::Plugin::JSAN::StaticDir - Process "static" directory
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
 In your F<dist.ini>:
 
+    name        = Sample-Dist
+    
     [JSAN::StaticDir]
     static_dir = static ; default
 
 =head1 DESCRIPTION
 
 This plugin will move the "static" directory of your distribution into the "lib" folder, under its
-distribution name. Please refer to L<Module::Build::JSAN::Installable> for details what is a "static" directory. 
+distribution name. That is, all files from the "static" directory, like:
+
+    /static/css/all.css
+    /static/image/logo.png
+
+will be moved to the:
+
+    /lib/Sample/Dist/static/css.all
+    /lib/Sample/Dist/static/image/logo.png
 
 =head1 AUTHOR
 

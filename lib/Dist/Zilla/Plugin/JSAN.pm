@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::VERSION = '0.03';
+  $Dist::Zilla::Plugin::JSAN::VERSION = '0.04';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla for building JSAN distributions
@@ -215,7 +215,7 @@ Dist::Zilla::Plugin::JSAN - a plugin for Dist::Zilla for building JSAN distribut
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -230,13 +230,20 @@ In F<dist.ini>:
     copyright_holder    = Clever Guy
     
     
+    ;=========================================================================
     ; version provider
-    [BumpVersionFromGit]
-    first_version = 0.01 
     
+    [Git::NextVersion]
+    first_version   = 0.0.1
+    
+    
+    ;=========================================================================
     ; include the link to git repo and web page
+    
     [GithubMeta]
     
+    
+    ;=========================================================================
     ; choose/generate files to include
     
     [GatherDir]
@@ -244,7 +251,9 @@ In F<dist.ini>:
     [License]
     
     
+    ;=========================================================================
     ; JSAN-specific configuration
+    
     [JSAN]                          ; generate docs
     docs_markup         = mmd       ; default
     
@@ -257,25 +266,34 @@ In F<dist.ini>:
     [JSAN::InstallInstructions]     ; add INSTALL file, describing the installation process
     [JSAN::Bundle]                  ; after docs generation to avoid docs for bundles
     
+    
+    ;=========================================================================
+    ; `npm` configuration - package.json generation
+    
     [JSAN::NPM]
-    main        = lib/Task/Sample/Dist/Core
+    main                            = lib/Task/Sample/Dist/Core
     
-    dependency            = joose >= 3.14.0
-    dependency            = json2 >= 0.2.0
+    dependency                      = joose >= 3.14.0
     
     
+    ;=========================================================================
     ; before release
     
     [Git::Check]
     [CheckChangesHasContent]
-    
     [ConfirmRelease]
     
-    ; releaser
+    
+    ;=========================================================================
+    ; release
+    
     [JSAN::NPM::Publish]        ; publish in `npm`
-    sudo = 0                    ; default is not to sudo
+    sudo = 1
      
+    
+    ;=========================================================================
     ; after release
+    
     [Git::Commit / Commit_Dirty_Files]
      
     [Git::Tag]
@@ -288,8 +306,10 @@ In F<dist.ini>:
     [Git::Push]
     push_to = origin
     
+    [JSAN::GitHubDocs]          ; after all commits to have clean workspace
+    
     [Twitter]
-    tweet_url     = http://cleverguy.github.com/sample-dist/
+    tweet_url     = http://cleverguy.github.com/Sample-Dist
     tweet         = Released {{ '{{$DIST}}-{{$VERSION}} {{$URL}}' }}
     hash_tags     = #nodejs #npm
 

@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::NPM::Publish;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.03';
+  $Dist::Zilla::Plugin::JSAN::NPM::Publish::VERSION = '0.04';
 }
 
 # ABSTRACT: Publish your module in npm with `dzil release`  
@@ -56,7 +56,7 @@ Dist::Zilla::Plugin::JSAN::NPM::Publish - Publish your module in npm with `dzil 
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
