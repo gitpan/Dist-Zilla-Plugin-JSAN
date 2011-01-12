@@ -1,5 +1,9 @@
 Release history for Dist::Zilla::Plugin::JSAN
 
+0.05      2011-01-12 18:14
+
+        - changed the url of css file for docs converted from markdown and its now configurable
+
 0.04      2010-12-12 15:27
         
         - added missed dependency from Dist::Zilla::Plugin::GithubMeta

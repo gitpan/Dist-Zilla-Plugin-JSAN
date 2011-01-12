@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::ReadmeFromMD;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.04';
+  $Dist::Zilla::Plugin::JSAN::ReadmeFromMD::VERSION = '0.05';
 }
 
 # ABSTRACT: build a README file
@@ -108,7 +108,7 @@ Dist::Zilla::Plugin::JSAN::ReadmeFromMD - build a README file
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -137,7 +137,7 @@ Nickolay Platonov <nplatonov@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Nickolay Platonov.
+This software is copyright (c) 2011 by Nickolay Platonov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

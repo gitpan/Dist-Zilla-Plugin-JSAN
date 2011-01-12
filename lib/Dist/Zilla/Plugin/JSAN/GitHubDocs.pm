@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::GitHubDocs;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::GitHubDocs::VERSION = '0.04';
+  $Dist::Zilla::Plugin::JSAN::GitHubDocs::VERSION = '0.05';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla which updates the 'gh-pages' branch after each release
@@ -161,7 +161,7 @@ Dist::Zilla::Plugin::JSAN::GitHubDocs - a plugin for Dist::Zilla which updates t
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -194,7 +194,7 @@ Nickolay Platonov <nplatonov@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Nickolay Platonov.
+This software is copyright (c) 2011 by Nickolay Platonov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,6 +1,6 @@
 package Dist::Zilla::MintingProfile::JSAN;
 BEGIN {
-  $Dist::Zilla::MintingProfile::JSAN::VERSION = '0.04';
+  $Dist::Zilla::MintingProfile::JSAN::VERSION = '0.05';
 }
 
 use Moose;
@@ -20,7 +20,7 @@ Dist::Zilla::MintingProfile::JSAN - a profile provider, pointing to the default 
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 DESCRIPTION
 
@@ -37,7 +37,7 @@ Nickolay Platonov <nplatonov@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Nickolay Platonov.
+This software is copyright (c) 2011 by Nickolay Platonov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

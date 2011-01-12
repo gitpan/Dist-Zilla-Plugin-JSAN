@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::VERSION = '0.04';
+  $Dist::Zilla::Plugin::JSAN::VERSION = '0.05';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla for building JSAN distributions
@@ -20,6 +20,13 @@ has 'docs_markup' => (
     isa     => 'Str',
     is      => 'rw',
     default => 'mmd'
+);
+
+
+has 'css_url' =>  (
+    isa     => 'Str',
+    is      => 'rw',
+    default => 'http://joose.it/markdown.css'
 );
 
 
@@ -66,10 +73,12 @@ sub generate_docs_from_mmd {
     
     require Text::MultiMarkdown;
     
+    my $css_url = $self->css_url;
+    
     $self->extract_inlined_docs({
         html => sub {
             my ($comments, $content) = @_;
-            return (Text::MultiMarkdown::markdown("css: http://bit.ly/multi_markdown_style_css \n\n" . $comments, { document_format => 'Complete' }), 'html')
+            return (Text::MultiMarkdown::markdown("css: $css_url \n\n" . $comments, { document_format => 'Complete' }), 'html')
         },
         
         mmd => sub {
@@ -215,7 +224,7 @@ Dist::Zilla::Plugin::JSAN - a plugin for Dist::Zilla for building JSAN distribut
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
@@ -256,6 +265,7 @@ In F<dist.ini>:
     
     [JSAN]                          ; generate docs
     docs_markup         = mmd       ; default
+    css_url             = http://joose.it/markdown.css  ; default
     
     [JSAN::StaticDir]
     static_dir          = static    ; default
@@ -372,7 +382,7 @@ Nickolay Platonov <nplatonov@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Nickolay Platonov.
+This software is copyright (c) 2011 by Nickolay Platonov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
