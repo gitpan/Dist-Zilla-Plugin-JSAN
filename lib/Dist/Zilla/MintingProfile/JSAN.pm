@@ -1,6 +1,6 @@
 package Dist::Zilla::MintingProfile::JSAN;
 BEGIN {
-  $Dist::Zilla::MintingProfile::JSAN::VERSION = '0.05';
+  $Dist::Zilla::MintingProfile::JSAN::VERSION = '0.06';
 }
 
 use Moose;
@@ -20,7 +20,7 @@ Dist::Zilla::MintingProfile::JSAN - a profile provider, pointing to the default 
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 DESCRIPTION
 

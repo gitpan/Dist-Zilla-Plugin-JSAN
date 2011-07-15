@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::PkgVersion;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.05';
+  $Dist::Zilla::Plugin::JSAN::PkgVersion::VERSION = '0.06';
 }
 
 # ABSTRACT: Embedd module version to sources
@@ -78,7 +78,7 @@ Dist::Zilla::Plugin::JSAN::PkgVersion - Embedd module version to sources
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 

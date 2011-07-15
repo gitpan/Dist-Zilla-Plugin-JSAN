@@ -4,7 +4,7 @@
       "Nickolay Platonov <nplatonov@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102345, CPAN::Meta::Converter version 2.101670",
+   "generated_by" : "Dist::Zilla version 4.200008, CPAN::Meta::Converter version 2.101670",
    "license" : [
       "perl_5"
    ],
@@ -33,9 +33,11 @@
             "Dist::Zilla::Plugin::CheckChangesHasContent" : "0.003",
             "Dist::Zilla::Plugin::Git" : "1.102810",
             "Dist::Zilla::Plugin::GithubMeta" : "0.10",
-            "Dist::Zilla::Plugin::Twitter" : "0.009",
+            "File::Find::Rule" : "0.28",
             "File::Temp" : "0.22",
+            "Getopt::LL" : "1.00",
             "JSON" : "2.00",
+            "MIME::Types" : 0,
             "Path::Class" : "0.16",
             "Text::Markdown" : "v1.0.26",
             "Text::MultiMarkdown" : "v1.0.29"
@@ -51,6 +53,6 @@
          "web" : "http://github.com/SamuraiJack/Dist-Zilla-Plugin-JSAN/tree"
       }
    },
-   "version" : "0.05"
+   "version" : "0.06"
 }
 

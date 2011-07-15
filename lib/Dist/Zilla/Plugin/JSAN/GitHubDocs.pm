@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::JSAN::GitHubDocs;
 BEGIN {
-  $Dist::Zilla::Plugin::JSAN::GitHubDocs::VERSION = '0.05';
+  $Dist::Zilla::Plugin::JSAN::GitHubDocs::VERSION = '0.06';
 }
 
 # ABSTRACT: a plugin for Dist::Zilla which updates the 'gh-pages' branch after each release
@@ -161,7 +161,7 @@ Dist::Zilla::Plugin::JSAN::GitHubDocs - a plugin for Dist::Zilla which updates t
 
 =head1 VERSION
 
-version 0.05
+version 0.06
 
 =head1 SYNOPSIS
 
